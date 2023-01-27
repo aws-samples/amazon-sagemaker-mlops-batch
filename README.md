@@ -11,27 +11,31 @@ There are multiple scenarios for performing batch inference. In some cases, you 
 
 The batch-model-monitoring-pipelines repository contains the code for preprocessing, training, evaluating the model, setting baseline, and running batch transform for model monitor. It has 3 notebooks - for setup, for train & baseline pipeline, and for batch inference & model monitor. There are some helper codes.
 
-\\|- Custom_IAM_policies
-\\| |— Custom_IAM_roles_policy
-\\| |— Custom_Lambda_policy
-\\|— pipeline_scripts
-\\| |— evaluate.py
-\\| |— preprocessing.py
-\\|— 0.Setup.ipynb*
-\\|— 1.SageMakerPipeline-BaselineData-Train.ipynb*
-\\|— 2.SageMakerPipeline-ModelMonitoring-DataQuality-BatchTransform.ipynb*
-\\|— iam_helper.py
-\\|— lambda_getapproved_model.py
+```
+|- Custom_IAM_policies
+| |— Custom_IAM_roles_policy
+| |— Custom_Lambda_policy
+|— pipeline_scripts
+| |— evaluate.py
+| |— preprocessing.py
+|— 0.Setup.ipynb*
+|— 1.SageMakerPipeline-BaselineData-Train.ipynb*
+|— 2.SageMakerPipeline-ModelMonitoring-DataQuality-BatchTransform.ipynb*
+|— iam_helper.py
+|— lambda_getapproved_model.py
+```
 
 ## Prerequisites
 
 There are some permission policies (as below) which are required by the SageMaker Execution Role for the workflow. These permission policies can be enabled through AWS Identity and Access Management (IAM) role permissions. 
 
-// AmazonSageMaker-ExecutionPolicy-<...>	
-// Custom_IAM_roles_policy	
-// Custom_Lambda_policy	
-// CloudWatchLogsFullAccess
-// AmazonSageMakerFullAccess
+```
+AmazonSageMaker-ExecutionPolicy-<...>	
+Custom_IAM_roles_policy	
+Custom_Lambda_policy	
+CloudWatchLogsFullAccess
+AmazonSageMakerFullAccess
+```
 
 AmazonSageMaker-ExecutionPolicy-<...> is the execution role associated with SageMaker user and has necessary S3 bucket policies. Custom_IAM_roles_policy and Custom_Lambda_policy are two custom policies created to support the required actions for lambda function and are saved in this folder, Custom_IAM_policies.
 
