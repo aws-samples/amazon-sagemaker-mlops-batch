@@ -39,6 +39,8 @@ AmazonSageMakerFullAccess
 
 AmazonSageMaker-ExecutionPolicy-<...> is the execution role associated with SageMaker user and has necessary S3 bucket policies. Custom_IAM_roles_policy and Custom_Lambda_policy are two custom policies created to support the required actions for lambda function and are saved in this folder, Custom_IAM_policies.
 
+Updating the SageMakerExecutionRole and creating the Lambda role is an Admin privilege. If users are in a sandbox account with admin privilege, they could do it themselves, otherwise, they should consult with the account administrator.
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
